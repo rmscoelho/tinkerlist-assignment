@@ -1,3 +1,105 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+//Breakpoints
+$mobile-sm: 320px;
+$mobile-md: 360px;
+$mobile-lg: 390px;
+$mobile-xl: 425px; //iPhone X
+
+$tablet-sm: 640px;
+$tablet-md: 768px; //iPad
+$tablet-lg: 800px;
+$tablet-xl: 962px;
+
+$laptop-sm: 1024px;
+$laptop-md: 1280px;
+$laptop-lg: 1366px;
+$desktop-xl: 1440px; //Retina
+
+$desktop-xs: 1536px;
+$desktop-sm: 1600px;
+$desktop-md: 1920px; //Full HD
+$desktop-lg: 2560px; //QHD
+$desktop-xl: 3840px; //4K
+
+/* Greyscale */
+$colour-white: #fff;
+$colour-grey-100: #f8f9fa;
+$colour-grey-200: #f1f3f5;
+$colour-grey-300: #e0e3e6;
+$colour-grey-400: #c9ced3;
+$colour-grey-500: #adb5bd;
+$colour-grey-600: #868e96;
+$colour-grey-700: #495057;
+$colour-grey-800: #343a40;
+$colour-grey-900: #212529;
+$colour-black: #000000;
+
+//Status colours
+$colour-success: #4dbe72;
+$colour-warning: #f0c136;
+$colour-error: #e15360;
+$colour-info: #3368b9;
+
+//Shadows
+$box-shadow: 2px 4px 8px #00000026;
+
+//Radius
+$border-radius-xs: 4px;
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 16px;
+$border-radius-xl: 20px;
+$border-radius-circle: 50%;
+
+//Font families
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Roboto', serif;
+$font-family-mono: 'Roboto Mono', monospace;
+
+//Font sizes
+$h1-font-size: 32px;
+$h2-font-size: 28px;
+$h3-font-size: 26px;
+$h4-font-size: 22px;
+$h5-font-size: 18px;
+$h6-font-size: 16px;
+$p-font-size: 16px;
+$a-font-size: 16px;
+
+//Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+//Text colours
+$text-colour-primary: $colour-black;
+$text-colour-secondary: $colour-grey-600;
+$text-colour-tertiary: $colour-grey-400;
+
+//Borders
+$border-width-xs: 1px;
+$border-width-sm: 2px;
+$border-width-md: 3px;
+$border-width-lg: 4px;
+$border-width-xl: 5px;
+
+//Line heights
+$line-height-xs: 1.2;
+$line-height-sm: 1.4;
+$line-height-md: 1.6;
+$line-height-lg: 1.8;
+$line-height-xl: 2;
+
+//Spacings
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;

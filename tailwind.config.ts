@@ -1,3 +1,4 @@
+import forms from '@tailwindcss/forms';
 import aspectRatio from '@tailwindcss/aspect-ratio';
 import containerQueries from '@tailwindcss/container-queries';
 import typography from '@tailwindcss/typography';
@@ -10,5 +11,5 @@ export default {
 		extend: {}
 	},
 
-	plugins: [typography, containerQueries, aspectRatio]
+	plugins: [typography, containerQueries, aspectRatio, forms]
 } satisfies Config;
