@@ -1,4 +1,9 @@
-<script lang="ts" ✂prettier:content✂="CglpbXBvcnQgSGVhZGVyIGZyb20gJyRsaWIvY29tcG9uZW50cy9IZWFkZXIvSGVhZGVyLnN2ZWx0ZSc7CglpbXBvcnQgJy4uL2FwcC5jc3MnOwoKCWxldCB7IGNoaWxkcmVuIH0gPSAkcHJvcHMoKTsK">{}</script>
+<script lang="ts">
+	import Header from '$lib/components/Header/Header.svelte';
+	import '../app.css';
+
+	let { children } = $props();
+</script>
 
 <div class="app">
 	<Header />

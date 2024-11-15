@@ -1,4 +1,12 @@
-<script lang="ts" ✂prettier:content✂="CglpbXBvcnQgeyBwYWdlIH0gZnJvbSAnJGFwcC9zdG9yZXMnOwoJaW1wb3J0IHsgY2FsY3VsYXRlVGltbWluZ3MgfSBmcm9tICckbGliL3NjcmlwdHMvaGFuZGxlVGltZUNhbGN1bGF0aW9ucyc7CgoJbGV0IGRhdGEgPSAkcGFnZS5kYXRhOwoJY29uc3QgZXBpc29kZURhdGEgPSBkYXRhLmVwaXNvZGU7Cgljb25zdCB0aW1pbmdzRGF0YSA9IGRhdGEudGltaW5nczsKCgljb25zdCBnZW5lcmF0ZVRpbWluZ3MgPSBjYWxjdWxhdGVUaW1taW5ncyhlcGlzb2RlRGF0YSwgdGltaW5nc0RhdGEpOwo=">{}</script>
+<script lang="ts">
+	import { page } from '$app/stores';
+	import { calculateTimmings } from '$lib/scripts/handleTimeCalculations';
+	let data = $page.data;
+	const episodeData = data.episode;
+	const timingsData = data.timings;
+
+	const generateTimings = calculateTimmings(episodeData, timingsData);
+</script>
 
 <svelte:head>
 	<title>Home</title>
