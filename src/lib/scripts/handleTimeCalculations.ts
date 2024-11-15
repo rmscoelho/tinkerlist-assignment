@@ -50,14 +50,17 @@ export const calculateTimmings = (episodeData: EpisodeDataType, timingsData: Tim
 
 		const partItems = { [partsList[i]]: episodeArray.part[partsList[i]].items };
 
-		// console.log(timingsData.item);
 		//Handle item timings
-		timingsArray.item = handleItemTimings(partItems, timingsArray.part, timingsData.item);
+		const itemDataArray = handleItemTimings(partItems, timingsArray.part, timingsData.item);
 
-		// timingsArray.item = itemTimings;
+		for (let j = 0; j < Object.keys(itemDataArray).length; j++) {
+			const key = Object.keys(itemDataArray)[j];
+
+			timingsArray.item[key] = itemDataArray[key];
+		}
 	}
 
-	// console.log(timingsArray);
+	console.log(timingsArray);
 
 	return timingsArray;
 };
@@ -71,16 +74,13 @@ export const handleItemTimings = (itemData: object, timingsPart: object, timings
 		back_time: 0
 	};
 
-	// console.log(timingsPart);
-	// console.log(itemData);
 	for (const key in timingsPart) {
 		if (key === Object.keys(itemData)[0]) {
 			for (let i = 0; i < itemData[key].length; i++) {
-				console.log(itemData[key][i]);
 				const currentItem = timingsItem[itemData[key][i]];
 
 				if (currentItem !== undefined) {
-					const estimatedDuration = currentItem.estimatedDuration;
+					const estimatedDuration = currentItem.estimated_duration;
 					const frontTime = i === 0 ? previousTime.front_time : previousTime.end_time;
 					const endTime = endTimeCalculation(previousTime.front_time, estimatedDuration / 1000);
 					const backTime =
@@ -103,7 +103,6 @@ export const handleItemTimings = (itemData: object, timingsPart: object, timings
 			}
 		}
 	}
-	// console.log(itemDataArray);
 	return itemDataArray;
 };
 
