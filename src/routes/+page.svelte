@@ -1,15 +1,20 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { calculateTimmings } from '$lib/scripts/handleTimeCalculations';
-	let data = $page.data;
-	const episodeData = data.episode;
-	const timingsData = data.timings;
 
-	const generateTimings = calculateTimmings(episodeData, timingsData);
+	// Get the page data
+	let data = $page.data;
+
+	// Get the episode data and timings data from the page data and clone them
+	const episodeData = JSON.parse(JSON.stringify(data.episode));
+	const timingsData = JSON.parse(JSON.stringify(data.timings));
+
+	// Calculate the timings and fill in the blanks
+	const generateTimings = JSON.parse(JSON.stringify(calculateTimmings(episodeData, timingsData)));
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Tinkerlist Assignment</title>
 	<meta content="Tinkerlist Assignment" name="description" />
 </svelte:head>
 
