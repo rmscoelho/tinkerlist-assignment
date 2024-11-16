@@ -19,8 +19,8 @@ export const handleDateConversion = (date: number): string => {
 
 export const calculateTimmings = (episodeData: EpisodeDataType, timingsData: TimingsDataType) => {
 	// Create a new object to store the calculated timings
-	const timingsArray: TimingsDataType = { ...timingsData };
-	const episodeArray: EpisodeDataType = { ...episodeData };
+	const timingsArray: TimingsDataType = timingsData ;
+	const episodeArray: EpisodeDataType = episodeData;
 
 	// Get the on air and off air times
 	const onAirTime = timingsArray.episode.on_air_time;
@@ -75,6 +75,8 @@ export const calculateTimmings = (episodeData: EpisodeDataType, timingsData: Tim
 			timingsArray.item[key] = itemDataArray[key];
 		}
 	}
+
+	console.log(timingsArray);
 	// Return the timings array
 	return timingsArray;
 };

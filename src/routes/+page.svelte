@@ -3,14 +3,15 @@
 	import { calculateTimmings } from '$lib/scripts/handleTimeCalculations';
 
 	// Get the page data
-	let data = $page.data;
+	let data = $derived($page.data);
 
 	// Get the episode data and timings data from the page data and clone them
-	const episodeData = JSON.parse(JSON.stringify(data.episode));
-	const timingsData = JSON.parse(JSON.stringify(data.timings));
+	let episodeData = $derived(data.episode);
+	let timingsData = $derived(data.timings);
 
 	// Calculate the timings and fill in the blanks
-	const generateTimings = JSON.parse(JSON.stringify(calculateTimmings(episodeData, timingsData)));
+	let generateTimings = $derived(calculateTimmings(episodeData, timingsData));
+
 </script>
 
 <svelte:head>
@@ -19,6 +20,8 @@
 </svelte:head>
 
 <section>
+	{console.log(data)}
+	{console.log(generateTimings)}
 	<div class="relative overflow-hidden shadow-md">
 		<table class="w-full table-auto text-left">
 			<thead
