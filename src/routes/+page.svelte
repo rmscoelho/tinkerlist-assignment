@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { calculateTimmings } from '$lib/scripts/handleTimeCalculations';
+	import { calculateTimings } from '$lib/scripts/handleTimeCalculations';
 	import EpisodeTable from '$lib/components/EpisodeTable/EpisodeTable.svelte';
 
 	// Get the page data
@@ -11,7 +11,7 @@
 	let timingsData = $derived(data.timings);
 
 	// Calculate the timings and fill in the blanks
-	let generateTimings = $derived(calculateTimmings(episodeData, timingsData));
+	let generateTimings = $derived(calculateTimings(episodeData, timingsData));
 </script>
 
 <svelte:head>
@@ -19,6 +19,6 @@
 	<meta content="Tinkerlist Assignment" name="description" />
 </svelte:head>
 
-<section>
+<section class="mx-auto w-full bg-white">
 	<EpisodeTable {generateTimings} {episodeData} />
 </section>

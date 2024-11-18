@@ -7,6 +7,7 @@ export interface TimingsDataType {
 export interface EpisodeDataType {
 	episode: EpisodeParts;
 	part: { [key: string]: PartItems };
+	item: { [key: string]: ItemsType };
 }
 
 export interface EpisodeParts {

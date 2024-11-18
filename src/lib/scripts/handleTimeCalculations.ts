@@ -1,4 +1,4 @@
-import type { EpisodeDataType, Timings, TimingsDataType } from '$lib/types/calculateTimingTypes';
+import type { EpisodeDataType, Timings, TimingsDataType } from '$lib/types/CalculateTimingTypes';
 
 // Handle date conversion
 export const handleDateConversion = (date: number): string => {
@@ -12,7 +12,7 @@ export const handleDateConversion = (date: number): string => {
 	return dtFormat.format(new Date(date * 1000));
 };
 
-export const calculateTimmings = (episodeData: EpisodeDataType, timingsData: TimingsDataType) => {
+export const calculateTimings = (episodeData: EpisodeDataType, timingsData: TimingsDataType) => {
 	// Create a new object to store the calculated timings
 	const timingsArray: TimingsDataType = timingsData;
 	const episodeArray: EpisodeDataType = episodeData;
