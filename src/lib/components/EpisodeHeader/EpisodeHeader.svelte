@@ -6,6 +6,7 @@
 	import { handleDateConversion } from '$lib/scripts/handleTimeCalculations';
 	import type { Icon } from '@fortawesome/fontawesome-svg-core';
 	import UserPhoto from '$lib/assets/user-photo.png';
+	import UserModal from '$lib/components/UserModal/UserModal.svelte';
 
 	//Import the props
 	let {
@@ -25,12 +26,18 @@
 		displayTable = !displayTable;
 		itemNumber = 1;
 	};
+
+	let modalOpen = $state(false);
+
+	const toggleModal = () => (modalOpen = !modalOpen);
 </script>
 
 <section
 	class="episode-header m-auto flex w-full flex-row justify-between gap-10 bg-white p-4 text-left"
 >
-	<div class="episode-header-timings container flex w-full flex-row gap-10 text-left">
+	<div
+		class="episode-header-timings container flex w-full flex-row items-center justify-start gap-10 text-left"
+	>
 		<div class="cursor-pointer border-r-2 border-gray-200 p-1 pr-3">
 			<FontAwesomeIcon icon={icons.arrowLeft} class="h-5 w-5 text-gray-500" size="lg" />
 		</div>
@@ -63,6 +70,9 @@
 
 	<div
 		class="episode-header-user container box-border flex w-40 cursor-pointer flex-row items-center justify-end gap-4 border-l-2 border-gray-300 px-6 text-right"
+		onclick={() => toggleModal()}
+		onkeyup={() => toggleModal()}
+		aria-hidden="true"
 	>
 		<img
 			src={UserPhoto}
@@ -72,3 +82,7 @@
 		<FontAwesomeIcon icon={icons.dropDown} class="h-5 w-5 " />
 	</div>
 </section>
+
+{#if modalOpen}
+	<UserModal bind:modalOpen {icons} />
+{/if}

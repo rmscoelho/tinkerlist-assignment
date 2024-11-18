@@ -5,6 +5,8 @@
 	import { type Icon, icon } from '@fortawesome/fontawesome-svg-core';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 
+	import { slide } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	// Import components and scripts
 	import { generateDisplayData } from '$lib/scripts/generateDisplayData';
 	import EpisodeHeader from '$lib/components/EpisodeHeader/EpisodeHeader.svelte';
@@ -31,7 +33,14 @@
 		flag: icon({ prefix: 'fas', iconName: 'flag' }),
 		timer: icon({ prefix: 'fas', iconName: 'stopwatch' }),
 		start: icon({ prefix: 'fas', iconName: 'play' }),
-		plus: icon({ prefix: 'fas', iconName: 'plus' })
+		plus: icon({ prefix: 'fas', iconName: 'plus' }),
+		user: icon({ prefix: 'fas', iconName: 'user' }),
+		close: icon({ prefix: 'fas', iconName: 'times' }),
+		linkedin: icon({ prefix: 'fab', iconName: 'linkedin' }),
+		github: icon({ prefix: 'fab', iconName: 'github' }),
+		phone: icon({ prefix: 'fas', iconName: 'phone' }),
+		email: icon({ prefix: 'fas', iconName: 'envelope' }),
+		curriculum: icon({ prefix: 'fas', iconName: 'graduation-cap' })
 	};
 
 	let displayTable = $state(true);
@@ -45,6 +54,7 @@
 	{#if displayTable}
 		<table
 			class="w-full table-auto border-separate border-spacing-y-2 bg-[#fafbfc] text-left shadow-md"
+			transition:slide={{ duration: 300, easing: cubicOut, delay: 100 }}
 		>
 			<!-- Call the Table Header component -->
 			<TableHeader {icons} />

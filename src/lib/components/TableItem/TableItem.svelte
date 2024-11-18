@@ -7,6 +7,8 @@
 	// Import types and scripts
 	import { handleDateConversion } from '$lib/scripts/handleTimeCalculations'; //Import the handleDateConversion function to convert the time to a readable format
 	import type { itemsDataType } from '$lib/types/DisplayDataTypes'; //Import the itemsDataType type
+	import { slide } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
 	//Import the props
 	let {
@@ -34,6 +36,7 @@
 <tr
 	class="cursor-pointer border-none bg-[#fafbfc] p-4 {partOpen ? '' : 'hidden'}"
 	onclick={() => (itemOpen = !itemOpen)}
+	transition:slide={{ duration: 300, easing: cubicOut, delay: 100 }}
 >
 	<td class="w-1/12 p-2 text-center">{value}</td>
 	<td class="flex flex-row items-center gap-4 rounded-l-xl border-y-2 border-l-2 bg-white p-2">

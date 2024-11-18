@@ -26,7 +26,7 @@ You can preview the production build with `npm run preview`.
 - I would need to learn more about Tailwind CSS, and its best practices, as currently I'm using it for the first time;
 - In the future, I wouldn't use a table to display the data, as it is harder to make it responsive. I would use flexbox instead, and change the way the data is displayed on smaller screens;
 - I would find an alternative to the FontAwesome icons, or at least the way they are used in the project, as it is limiting in the way I can manipulate them after render;
-- Visually, there could be animations added to the action of opening and closing elements of the table;
+- Visually, I would also improve the animations, and add some, where necessary;
 - I need to learn more about Svelte 5, as it is rather new, and had some big changes compared to Svelte 4;
 - I feel like my code could be better, and for that I need to focus on improving my JavaScript and TypeScript skills;
 - I was a bit confused about the calculations for the back time, I wouldn't mind if someone could explain it to me;
