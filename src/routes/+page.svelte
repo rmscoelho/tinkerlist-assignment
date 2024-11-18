@@ -19,6 +19,6 @@
 	<meta content="Tinkerlist Assignment" name="description" />
 </svelte:head>
 
-<section class="mx-auto w-full bg-white">
+<section class="mx-auto w-[1280px] bg-white shadow-lg">
 	<EpisodeTable {generateTimings} {episodeData} />
 </section>

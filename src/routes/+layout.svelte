@@ -5,7 +5,7 @@
 	import { far } from '@fortawesome/free-regular-svg-icons';
 	import '@fortawesome/fontawesome-svg-core/styles.css';
 	// Configure the FontAwesome icons
-	config.autoReplaceSvg = true;
+	config.autoReplaceSvg = false;
 	config.autoAddCss = false;
 	library.add(fas, far);
 

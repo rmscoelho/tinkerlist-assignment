@@ -55,7 +55,7 @@ export const calculateTimings = (episodeData: EpisodeDataType, timingsData: Timi
 
 		// Update the previous front, back and duration times
 		previousTime.front_time = endTime;
-		previousTime.back_time = backTime;
+		previousTime.back_time = endTime + estDuration / 1000;
 		previousTime.estimated_duration = estDuration;
 		previousTime.end_time = frontTime + estDuration / 1000;
 
@@ -85,13 +85,19 @@ export const calculateTimings = (episodeData: EpisodeDataType, timingsData: Timi
 			const itemFrontTime =
 				itemCount === 0 ? timingsArray.part[key].front_time : previousItemTime.end_time;
 			const itemEndTime = endTimeCalculation(previousItemTime.front_time, itemDuration / 1000);
-			const itemBackTime =
-				itemCount === 0
-					? timingsArray.part[key].front_time
-					: backTimeCalculation(
-							previousItemTime.back_time,
-							previousItemTime.estimated_duration / 1000
-						);
+			let itemBackTime = 0;
+
+			// Calculate the item back time
+			if (itemCount === 0) {
+				itemBackTime = itemFrontTime;
+			} else if (itemCount === episodeArray.part[key].items.length - 1 && !isLastPart) {
+				itemBackTime = timingsArray.part[key].end_time;
+			} else {
+				itemBackTime = backTimeCalculation(
+					previousItemTime.back_time,
+					previousItemTime.estimated_duration / 1000
+				);
+			}
 
 			// Add the item timings to the timings array
 			timingsArray.item[itemKey.toString()] = {
@@ -103,7 +109,7 @@ export const calculateTimings = (episodeData: EpisodeDataType, timingsData: Timi
 
 			// Update the previous front, back and duration times
 			previousItemTime.front_time = itemEndTime;
-			previousItemTime.back_time = itemBackTime;
+			previousItemTime.back_time = itemEndTime + itemDuration / 1000;
 			previousItemTime.estimated_duration = itemDuration;
 			previousItemTime.end_time = itemFrontTime + itemDuration / 1000;
 
