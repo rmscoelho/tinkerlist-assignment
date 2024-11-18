@@ -28,6 +28,7 @@ You can preview the production build with `npm run preview`.
 - Currently, the calculations are done through looping the data, this could be done in a more efficient way (someone talked about flat maps, but I still need to explore that way of doing it);
 - I would need to learn more about Tailwind CSS, and its best practices, as currently I'm using it for the first time;
 - In the future, I wouldn't use a table to display the data, as it is harder to make it responsive. I would use flexbox instead, and change the way the data is displayed on smaller screens;
+- Speaking of responsivness, I would've focused on having great responsiveness all throughout the project, by building it mobile first, then scaling up, instead of doing the opposite, as I did here;
 - I would find an alternative to the FontAwesome icons, or at least the way they are used in the project, as it is limiting in the way I can manipulate them after render;
 - Visually, I would also improve the animations, and add some, where necessary;
 - I need to learn more about Svelte 5, as it is rather new, and had some big changes compared to Svelte 4;
