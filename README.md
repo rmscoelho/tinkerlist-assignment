@@ -1,7 +1,10 @@
 ## Starting the project
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a
-development server:
+Clone the repository to your computer with `git clone https://github.com/rmscoelho/tinkerlist-assignment`.
+
+Open the terminal in the project folder with `cd ./tinkerlist-assignment`.
+
+Install dependencies with `npm install`, and start a development server:
 
 ```bash
 npm run dev
